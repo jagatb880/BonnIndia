@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.alysiancreative.bonnindia.Adapter.CustomerAdapter;
 import com.alysiancreative.bonnindia.R;
 
 public class CustomerFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener{
@@ -43,12 +44,20 @@ public class CustomerFragment extends Fragment implements SwipeRefreshLayout.OnR
                                     @Override
                                     public void run() {
                                         swipeRefreshLayout.setRefreshing(true);
-//                                        getData();
+                                        getData();
                                     }
                                 }
         );
 
         return view;
+    }
+
+    public void getData(){
+
+        //Finally initializing our adapter
+        adapter = new CustomerAdapter(getActivity());
+        //Adding adapter to recyclerview
+        recyclerView.setAdapter(adapter);
     }
 
     @Override
