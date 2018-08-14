@@ -58,6 +58,7 @@ public class CustomerFragment extends Fragment implements SwipeRefreshLayout.OnR
         adapter = new CustomerAdapter(getActivity());
         //Adding adapter to recyclerview
         recyclerView.setAdapter(adapter);
+        swipeRefreshLayout.setRefreshing(false);
     }
 
     @Override

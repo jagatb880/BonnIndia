@@ -22,7 +22,7 @@ public class BadgeDrawable extends Drawable {
 
     public BadgeDrawable(Context context) {
         //mTextSize = context.getResources().getDimension(R.dimen.badge_text_size);
-        mTextSize = 20F;
+        mTextSize = 30F;
 
         mBadgePaint = new Paint();
         mBadgePaint.setColor(Color.RED);
@@ -48,9 +48,9 @@ public class BadgeDrawable extends Drawable {
         float height = bounds.bottom - bounds.top;
 
         // Position the badge in the top-right quadrant of the icon.
-        float radius = ((Math.min(width, height) / 2) - 1) / 2;
-        float centerX = width - radius - 1;
-        float centerY = radius + 1;
+        float radius = ((Math.min(width, height) ) - 15) / 2;
+        float centerX = width - radius + 10;
+        float centerY = radius - 15;
 
         // Draw badge circle.
         canvas.drawCircle(centerX, centerY, radius, mBadgePaint);

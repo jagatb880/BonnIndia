@@ -2,6 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="80sp"
+    android:layout_marginTop="20sp"
+    android:background="@color/white"
     android:orientation="horizontal"
     android:weightSum="12">
 
@@ -9,8 +11,8 @@
         android:layout_width="0sp"
         android:layout_height="80sp"
         android:layout_marginBottom="10sp"
-        android:layout_marginLeft="25sp"
-        android:layout_weight="1.5">
+        android:layout_marginLeft="15sp"
+        android:layout_weight="1.2">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -43,7 +45,7 @@
     <LinearLayout
         android:layout_width="0sp"
         android:layout_height="80sp"
-        android:layout_weight="9"
+        android:layout_weight="9.6"
         android:orientation="vertical"
         android:weightSum="2">
 
@@ -52,55 +54,101 @@
             android:layout_height="0sp"
             android:layout_weight="1"
             android:orientation="horizontal"
-            android:padding="10sp"
-            android:weightSum="10">
-
-            <TextView
-                android:layout_width="0sp"
-                android:layout_height="match_parent"
-                android:layout_weight="6"
-                android:fontFamily="@font/roboto_regular"
-                android:text="Jagat Bandhu"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+            android:paddingTop="10sp"
+            android:paddingLeft="10sp"
+            android:weightSum="12">
 
             <TextView
                 android:layout_width="0sp"
                 android:layout_height="match_parent"
                 android:layout_weight="4"
-                android:drawableLeft="@drawable/phone"
-                android:drawablePadding="5sp"
                 android:fontFamily="@font/roboto_regular"
-                android:text="2233665588"
-                android:textSize="14sp" />
+                android:text="Jagat Bandhu"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="4"
+                android:paddingLeft="5sp">
+
+                <ImageView
+                    android:layout_width="15sp"
+                    android:layout_height="16sp"
+                    android:src="@drawable/phone" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/roboto_regular"
+                    android:paddingLeft="2sp"
+                    android:text="2233665588"
+                    android:textSize="13sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="4"
+                android:paddingLeft="5sp">
+
+                <ImageView
+                    android:layout_width="15sp"
+                    android:layout_height="18sp"
+                    android:src="@drawable/date" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/roboto_regular"
+                    android:paddingLeft="2sp"
+                    android:text="29/08/2018"
+                    android:textSize="13sp" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0sp"
             android:layout_weight="1"
-            android:paddingLeft="10sp">
+            android:paddingLeft="10sp"
+            android:paddingTop="5sp">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/location"
-                android:drawablePadding="5sp"
-                android:fontFamily="@font/roboto_regular"
-                android:text="Plot no: Lp 164, Patia, Bhubaneswar"
-                android:textSize="14sp" />
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="15sp"
+                    android:layout_height="17sp"
+                    android:src="@drawable/location" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:paddingLeft="5sp"
+                    android:text="Plot no: Lp 164, Patia, Bhubaneswar, 751001"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="0sp"
         android:layout_height="80sp"
-        android:layout_weight="1.5">
+        android:layout_weight="1.2"
+        android:paddingTop="5sp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="20sp"
-            android:layout_margin="10sp"
+            android:layout_margin="8sp"
             android:background="@drawable/view"
             android:gravity="center_horizontal" />
     </LinearLayout>
