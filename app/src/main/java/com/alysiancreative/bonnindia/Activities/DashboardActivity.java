@@ -62,6 +62,7 @@ public class DashboardActivity extends AppCompatActivity
         mFragmentTransaction = mFragmentManager.beginTransaction();
         mFragmentTransaction.replace(R.id.containerView, new DashboardFragment()).commit();
         toolbar.setTitle(getString(R.string.nav_dashboard));
+        toolbar.setTitleTextColor(getResources().getColor(R.color.fontColor));
 
         /**
          * Lets inflate the very first fragment

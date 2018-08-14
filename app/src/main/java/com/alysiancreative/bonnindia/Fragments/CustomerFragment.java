@@ -63,6 +63,6 @@ public class CustomerFragment extends Fragment implements SwipeRefreshLayout.OnR
 
     @Override
     public void onRefresh() {
-
+        getData();
     }
 }
