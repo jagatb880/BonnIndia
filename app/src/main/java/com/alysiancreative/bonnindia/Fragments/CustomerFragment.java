@@ -4,6 +4,8 @@ package com.alysiancreative.bonnindia.Fragments;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,10 @@ public class CustomerFragment extends Fragment implements SwipeRefreshLayout.OnR
 
     View view;
     private SwipeRefreshLayout swipeRefreshLayout;
+    //Creating Views
+    private RecyclerView recyclerView;
+    private LinearLayoutManager layoutManager;
+    private RecyclerView.Adapter adapter;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle b) {
 
@@ -22,6 +28,12 @@ public class CustomerFragment extends Fragment implements SwipeRefreshLayout.OnR
         swipeRefreshLayout = view.findViewById(R.id.swipe_refresh_layout);
 
         swipeRefreshLayout.setOnRefreshListener(this);
+
+        //Initializing Views
+        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(layoutManager);
 
         /**
          * Showing Swipe Refresh animation on activity create
