@@ -1,13 +1,14 @@
 package com.alysiancreative.bonnindia.ModelClass;
 
-public class CustomerList {
+public class OrderRecievedList {
 
     //Data Variable
     private String serialNo;
     private String customerName;
-    private String mobileNumber;
+    private String OrderId;
+    private String paidStatus;
     private String date;
-    private String address;
+    private String productTitle;
 
     public String getSerialNo() {
         return serialNo;
@@ -25,12 +26,20 @@ public class CustomerList {
         this.customerName = customerName;
     }
 
-    public String getMobileNumber() {
-        return mobileNumber;
+    public String getOrderId() {
+        return OrderId;
     }
 
-    public void setMobileNumber(String mobileNumber) {
-        this.mobileNumber = mobileNumber;
+    public void setOrderId(String orderId) {
+        OrderId = orderId;
+    }
+
+    public String getPaidStatus() {
+        return paidStatus;
+    }
+
+    public void setPaidStatus(String paidStatus) {
+        this.paidStatus = paidStatus;
     }
 
     public String getDate() {
@@ -41,12 +50,11 @@ public class CustomerList {
         this.date = date;
     }
 
-    public String getAddress() {
-        return address;
+    public String getProductTitle() {
+        return productTitle;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setProductTitle(String productTitle) {
+        this.productTitle = productTitle;
     }
-
 }

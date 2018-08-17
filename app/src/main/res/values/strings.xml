@@ -16,6 +16,9 @@
     <string name="order_recieved">ORDER RECIEVED</string>
     <string name="pending">PENDING</string>
 
+    <string name="todayorderstatsus">Today\'s Order Status</string>
+    <string name="todayinvoicelist">Today\'s Invoice List</string>
+
     <string-array name="navigation_drawer_items_array">
         <item>Connect</item>
         <item>Fixtures</item>
