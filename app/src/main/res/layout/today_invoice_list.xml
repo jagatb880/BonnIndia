@@ -47,7 +47,9 @@
         android:fontFamily="@font/roboto_regular"/>
     <ImageView
         android:layout_width="0dp"
-        android:layout_height="24dp"
+        android:layout_height="20dp"
         android:layout_weight="0.166"
-        android:src="@drawable/ic_attachment"/>
+        android:paddingLeft="22sp"
+        android:paddingRight="22sp"
+        android:src="@drawable/invoice"/>
 </LinearLayout>

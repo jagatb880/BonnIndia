@@ -60,7 +60,7 @@ public class TodayInvoiceListAdapter extends RecyclerView.Adapter<RecyclerView.V
             todaysInvoicListNormalViewholder.txtPayment.setText(todayOrderStatus.getIssue());
             if (todayOrderStatus.getStatus().equals("0")){
                 todaysInvoicListNormalViewholder.txtAssignTo.setText("Paid");
-                todaysInvoicListNormalViewholder.txtAssignTo.setTextColor(context.getResources().getColor(R.color.fontColor));
+                todaysInvoicListNormalViewholder.txtAssignTo.setTextColor(context.getResources().getColor(R.color.greenColor));
             }else {
                 todaysInvoicListNormalViewholder.txtAssignTo.setText("Un-Paid");
                 todaysInvoicListNormalViewholder.txtAssignTo.setTextColor(context.getResources().getColor(R.color.colorAccent));
