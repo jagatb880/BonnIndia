@@ -15,12 +15,18 @@
             android:icon="@drawable/customer"
             android:title="Customer" />
     </group>
-    <group android:id="@+id/order_reveive">
+    <group android:id="@+id/customerService">
         <item
-            android:id="@+id/nav_order_reveive"
-            android:icon="@drawable/order_received"
-            android:title="Order Received" />
+            android:id="@+id/nav_customer_service"
+            android:icon="@drawable/customer"
+            android:title="Customer Service" />
     </group>
+    <!--<group android:id="@+id/order_reveive">-->
+        <!--<item-->
+            <!--android:id="@+id/nav_order_reveive"-->
+            <!--android:icon="@drawable/order_received"-->
+            <!--android:title="Order Received" />-->
+    <!--</group>-->
     <group android:id="@+id/invoice">
         <item
             android:id="@+id/nav_invoice"

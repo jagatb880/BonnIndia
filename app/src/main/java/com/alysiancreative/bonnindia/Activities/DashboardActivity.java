@@ -1,7 +1,10 @@
 package com.alysiancreative.bonnindia.Activities;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -13,9 +16,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.alysiancreative.bonnindia.Fragments.ChangePasswordFragment;
 import com.alysiancreative.bonnindia.Fragments.CustomerFragment;
+import com.alysiancreative.bonnindia.Fragments.CustomerServiceFragment;
 import com.alysiancreative.bonnindia.Fragments.DashboardFragment;
 import com.alysiancreative.bonnindia.Fragments.OrderRecievedFragment;
 import com.alysiancreative.bonnindia.R;
@@ -31,13 +36,16 @@ public class DashboardActivity extends AppCompatActivity
 
     private Toolbar toolbar;
     private ActionBarDrawerToggle mDrawerToggle;
+    SharedPreferences sharedPreferences;
+    private String token;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        token = sharedPreferences.getString("TOKEN", "");
 
         /**
          *Setup the DrawerLayout and NavigationView
@@ -52,7 +60,6 @@ public class DashboardActivity extends AppCompatActivity
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
         /**
          * Lets inflate the very first fragment
          * Here , we are inflating the AllJobFragment as the first Fragment
@@ -94,17 +101,23 @@ public class DashboardActivity extends AppCompatActivity
                     toolbar.setTitle(getString(R.string.nav_customer));
                 }
 
-                if (menuItem.getItemId() == R.id.nav_order_reveive) {
+                if (menuItem.getItemId() == R.id.nav_customer_service) {
                     FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.containerView, new OrderRecievedFragment()).commit();
-                    toolbar.setTitle(getString(R.string.nav_order_reveive));
+                    fragmentTransaction.replace(R.id.containerView, new CustomerServiceFragment()).commit();
+                    toolbar.setTitle(getString(R.string.nav_customer_service));
                 }
 
-                if (menuItem.getItemId() == R.id.nav_order_reveive) {
-                    FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.containerView, new OrderRecievedFragment()).commit();
-                    toolbar.setTitle(getString(R.string.nav_order_reveive));
-                }
+//                if (menuItem.getItemId() == R.id.nav_order_reveive) {
+//                    FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
+//                    fragmentTransaction.replace(R.id.containerView, new OrderRecievedFragment()).commit();
+//                    toolbar.setTitle(getString(R.string.nav_order_reveive));
+//                }
+
+//                if (menuItem.getItemId() == R.id.nav_order_reveive) {
+//                    FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
+//                    fragmentTransaction.replace(R.id.containerView, new OrderRecievedFragment()).commit();
+//                    toolbar.setTitle(getString(R.string.nav_order_reveive));
+//                }
 
                 if (menuItem.getItemId() == R.id.nav_change_password) {
                     FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
@@ -113,6 +126,9 @@ public class DashboardActivity extends AppCompatActivity
                 }
 
                 if (menuItem.getItemId() == R.id.nav_logout) {
+                    sharedPreferences.edit().clear().commit();
+                    Toast.makeText(getApplicationContext(), "Logout successfully", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(),LoginActivity.class));
                     finish();
                 }
                 return false;

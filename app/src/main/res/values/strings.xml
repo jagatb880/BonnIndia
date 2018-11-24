@@ -10,11 +10,14 @@
     <string name="action_alert">Alert</string>
     <string name="nav_dashboard">Dashboard</string>
     <string name="nav_customer">Customer</string>
+    <string name="nav_customer_service">Customer Service</string>
     <string name="nav_order_reveive">Order Recieved</string>
     <string name="nav_change_password">Change Password</string>
     <string name="completed">COMPLETED</string>
     <string name="order_recieved">ORDER RECIEVED</string>
     <string name="pending">PENDING</string>
+    <string name="title_customer_details">Customer Details</string>
+    <string name="title_customer_service_details">Customer Service Details</string>
 
     <string name="todayorderstatsus">Today\'s Order Status</string>
     <string name="todayinvoicelist">Today\'s Invoice List</string>
